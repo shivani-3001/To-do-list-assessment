@@ -22,6 +22,21 @@ The `TaskList` component displays the list of tasks. It receives the task data a
 
 The `TaskItem` component represents a single task in the list. It displays the task title and provides buttons for editing, deleting, and marking the task as completed or incomplete.
 
+Architecture and Design Decisions
+The todo list app is built using React.js, a popular JavaScript library for building user interfaces. The application follows a component-based architecture, with each UI element represented by a separate component (e.g., TaskForm, TaskList, TaskItem).
+
+Key design decisions include:
+
+Component Reusability: Components are designed to be reusable and modular, allowing for easy composition and maintenance of the application.
+State Management: The application uses React's useState hook for managing state within functional components. Task data and UI state (e.g., filter options, search term) are stored in component state.
+Local Storage: Task data is persisted between sessions using the browser's local storage API. This ensures that tasks remain visible even after refreshing the page or closing/reopening the browser.
+Assumptions Made During Development
+During development, the following assumptions were made:
+
+Unique Task IDs: Each task object is assumed to have a unique identifier (ID) to ensure proper rendering and manipulation of tasks.
+Consistent Task Order: The order of tasks in the task list remains consistent across renders, allowing for stable rendering and sorting of tasks.
+User Interaction: Users are assumed to interact with the application primarily through the provided UI controls (e.g., buttons, input fields).
+
 ## Running the App
 
 To run the todo list app locally:
