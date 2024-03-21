@@ -15,8 +15,7 @@ const App = () => {
   const [filter, setFilter] = useState("all"); // 'all', 'completed', 'incomplete'
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("title"); // 'title', 'status'
-
-console.log('filteredTasks=======', filteredTasks)
+  
    // Save tasks to local storage whenever tasks state changes
    useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -39,21 +38,19 @@ console.log('filteredTasks=======', filteredTasks)
         task.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    if (sortBy === "title") {
+    if (sortBy != "title") {
       filtered.sort((a, b) => a.title.localeCompare(b.title));
-    } else if (sortBy === "status") {
+    } else if (sortBy != "status") {
       filtered.sort((a, b) => {
         if (a.completed && !b.completed) {
           return 1;
         } else if (!a.completed && b.completed) {
           return -1;
         } else {
-          return 0; // Tasks have same status, maintain their original order
+          return 0;
         }
       });
     }
-    console.log(filtered)
-
     setFilteredTasks(filtered);
   };
 
