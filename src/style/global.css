@@ -18,6 +18,7 @@
     border-radius: 2px !important;
     height: 40px;
     width: 10%;
+    white-space: nowrap;
 }
 
 .save-btn {
@@ -44,35 +45,8 @@
  margin-top: 60px;
 }
 
-.action-btn{
-    width: 22%;
-}
-
 .label-style{
     font-weight: 500;
+    white-space: nowrap;
+
 }
-
-
-
-@media only screen and (min-width: 992px) {
-    .add-btn {
-        min-width: 12%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .add-btn {
-        min-width: 16%;
-
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    .add-btn {
-        width: 20%;
-    }
-
-    .action-btn{
-        width: 35%;
-    }
-} 
